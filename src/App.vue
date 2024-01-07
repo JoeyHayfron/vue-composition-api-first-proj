@@ -1,10 +1,14 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { inject } from 'vue'
+
+const GStore = inject('GStore')
 </script>
 
 <template>
   <div id="layout">
     <header>
+      <div v-if="GStore.flashMessage">{{ GStore.flashMessage }}</div>
       <div>
         <nav>
           <RouterLink to="/">Events</RouterLink> |
